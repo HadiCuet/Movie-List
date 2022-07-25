@@ -2,8 +2,6 @@
 //  Movie_ListTests.swift
 //  Movie ListTests
 //
-//  Created by Abdullah Al Hadi on 25/7/22.
-//
 
 import XCTest
 @testable import Movie_List

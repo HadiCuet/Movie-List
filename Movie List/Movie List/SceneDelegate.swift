@@ -2,8 +2,6 @@
 //  SceneDelegate.swift
 //  Movie List
 //
-//  Created by Abdullah Al Hadi on 25/7/22.
-//
 
 import UIKit
 

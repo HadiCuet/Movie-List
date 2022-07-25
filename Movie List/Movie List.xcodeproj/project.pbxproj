@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894AE75F288EC31600C19150 /* HTTPNetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE75E288EC31600C19150 /* HTTPNetworkRoute.swift */; };
+		894AE761288EC34000C19150 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE760288EC34000C19150 /* HTTPMethod.swift */; };
+		894AE763288EC36500C19150 /* HTTPNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE762288EC36500C19150 /* HTTPNetworkError.swift */; };
+		894AE765288EC38B00C19150 /* HTTPNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE764288EC38B00C19150 /* HTTPNetworkRequest.swift */; };
+		894AE767288EC3B200C19150 /* HTTPNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE766288EC3B200C19150 /* HTTPNetworkResponse.swift */; };
+		894AE769288EC3DC00C19150 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE768288EC3DC00C19150 /* URLEncoder.swift */; };
+		894AE76B288EC40200C19150 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE76A288EC40200C19150 /* Result.swift */; };
+		894AE76D288EC42700C19150 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE76C288EC42700C19150 /* ClientService.swift */; };
+		894AE76F288EC44D00C19150 /* ClientServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE76E288EC44D00C19150 /* ClientServiceHelper.swift */; };
+		894AE772288EC51D00C19150 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE771288EC51D00C19150 /* Log.swift */; };
+		894AE774288EC57900C19150 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE773288EC57900C19150 /* Constants.swift */; };
+		894AE777288ED07300C19150 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AE776288ED07300C19150 /* MovieInfo.swift */; };
 		89EC43C5288E71A400E4EFFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43C4288E71A400E4EFFA /* AppDelegate.swift */; };
 		89EC43C7288E71A400E4EFFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43C6288E71A400E4EFFA /* SceneDelegate.swift */; };
 		89EC43C9288E71A400E4EFFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43C8288E71A400E4EFFA /* ViewController.swift */; };
@@ -36,6 +48,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		894AE75E288EC31600C19150 /* HTTPNetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkRoute.swift; sourceTree = "<group>"; };
+		894AE760288EC34000C19150 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		894AE762288EC36500C19150 /* HTTPNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkError.swift; sourceTree = "<group>"; };
+		894AE764288EC38B00C19150 /* HTTPNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkRequest.swift; sourceTree = "<group>"; };
+		894AE766288EC3B200C19150 /* HTTPNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkResponse.swift; sourceTree = "<group>"; };
+		894AE768288EC3DC00C19150 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
+		894AE76A288EC40200C19150 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		894AE76C288EC42700C19150 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		894AE76E288EC44D00C19150 /* ClientServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServiceHelper.swift; sourceTree = "<group>"; };
+		894AE771288EC51D00C19150 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		894AE773288EC57900C19150 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		894AE776288ED07300C19150 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		89EC43C1288E71A400E4EFFA /* Movie List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EC43C4288E71A400E4EFFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89EC43C6288E71A400E4EFFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +100,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		894AE75A288EC2C800C19150 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				894AE75B288EC2D300C19150 /* HTTP */,
+				894AE75C288EC2DB00C19150 /* Encoding */,
+				894AE75D288EC2E300C19150 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		894AE75B288EC2D300C19150 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				894AE75E288EC31600C19150 /* HTTPNetworkRoute.swift */,
+				894AE760288EC34000C19150 /* HTTPMethod.swift */,
+				894AE762288EC36500C19150 /* HTTPNetworkError.swift */,
+				894AE764288EC38B00C19150 /* HTTPNetworkRequest.swift */,
+				894AE766288EC3B200C19150 /* HTTPNetworkResponse.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		894AE75C288EC2DB00C19150 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				894AE768288EC3DC00C19150 /* URLEncoder.swift */,
+				894AE76A288EC40200C19150 /* Result.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		894AE75D288EC2E300C19150 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				894AE76C288EC42700C19150 /* ClientService.swift */,
+				894AE76E288EC44D00C19150 /* ClientServiceHelper.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		894AE770288EC50F00C19150 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				894AE771288EC51D00C19150 /* Log.swift */,
+				894AE773288EC57900C19150 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		894AE775288ECF7D00C19150 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				894AE776288ED07300C19150 /* MovieInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		89EC43B8288E71A400E4EFFA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +180,9 @@
 		89EC43C3288E71A400E4EFFA /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
+				894AE775288ECF7D00C19150 /* Model */,
+				894AE770288EC50F00C19150 /* Utility */,
+				894AE75A288EC2C800C19150 /* Networking */,
 				89EC43C4288E71A400E4EFFA /* AppDelegate.swift */,
 				89EC43C6288E71A400E4EFFA /* SceneDelegate.swift */,
 				89EC43C8288E71A400E4EFFA /* ViewController.swift */,
@@ -258,8 +342,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894AE765288EC38B00C19150 /* HTTPNetworkRequest.swift in Sources */,
+				894AE777288ED07300C19150 /* MovieInfo.swift in Sources */,
 				89EC43C9288E71A400E4EFFA /* ViewController.swift in Sources */,
+				894AE772288EC51D00C19150 /* Log.swift in Sources */,
+				894AE763288EC36500C19150 /* HTTPNetworkError.swift in Sources */,
+				894AE769288EC3DC00C19150 /* URLEncoder.swift in Sources */,
 				89EC43C5288E71A400E4EFFA /* AppDelegate.swift in Sources */,
+				894AE75F288EC31600C19150 /* HTTPNetworkRoute.swift in Sources */,
+				894AE76B288EC40200C19150 /* Result.swift in Sources */,
+				894AE767288EC3B200C19150 /* HTTPNetworkResponse.swift in Sources */,
+				894AE76F288EC44D00C19150 /* ClientServiceHelper.swift in Sources */,
+				894AE761288EC34000C19150 /* HTTPMethod.swift in Sources */,
+				894AE774288EC57900C19150 /* Constants.swift in Sources */,
+				894AE76D288EC42700C19150 /* ClientService.swift in Sources */,
 				89EC43C7288E71A400E4EFFA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
