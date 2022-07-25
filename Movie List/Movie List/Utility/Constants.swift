@@ -6,6 +6,7 @@
 import Foundation
 
 let baseURL: String = "https://api.themoviedb.org/"
+let baseImageUrl: String = "https://image.tmdb.org/"
 let timeOutInterval: TimeInterval = 20.0
 
 let kApiKeyParam = "api_key"
