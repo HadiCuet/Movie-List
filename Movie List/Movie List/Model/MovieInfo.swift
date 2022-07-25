@@ -11,6 +11,12 @@ struct MovieInfo: Decodable {
 
 struct MovieResult: Decodable {
     let poster_path: String?
+    var posterUrl: URL? {
+        if let posterPath = poster_path {
+            return URL(string: baseImageUrl + posterPath)
+        }
+        return nil
+    }
     let title: String
     let overview: String
 }
