@@ -6,10 +6,10 @@
 import Foundation
 
 struct MovieInfo: Decodable {
-    let results: [Results]
+    let results: [MovieResult]
 }
 
-struct Results: Decodable {
+struct MovieResult: Decodable {
     let poster_path: String?
     let title: String
     let overview: String

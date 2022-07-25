@@ -28,6 +28,8 @@
 		89EC43DC288E71A500E4EFFA /* Movie_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43DB288E71A500E4EFFA /* Movie_ListTests.swift */; };
 		89EC43E6288E71A500E4EFFA /* Movie_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43E5288E71A500E4EFFA /* Movie_ListUITests.swift */; };
 		89EC43E8288E71A500E4EFFA /* Movie_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC43E7288E71A500E4EFFA /* Movie_ListUITestsLaunchTests.swift */; };
+		89EEDFF5288EEC110079E7C4 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFF4288EEC110079E7C4 /* MovieViewModel.swift */; };
+		89EEDFF7288EEC460079E7C4 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFF6288EEC460079E7C4 /* Bindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		89EC43E1288E71A500E4EFFA /* Movie ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Movie ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EC43E5288E71A500E4EFFA /* Movie_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_ListUITests.swift; sourceTree = "<group>"; };
 		89EC43E7288E71A500E4EFFA /* Movie_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		89EEDFF4288EEC110079E7C4 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		89EEDFF6288EEC460079E7C4 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			children = (
 				894AE771288EC51D00C19150 /* Log.swift */,
 				894AE773288EC57900C19150 /* Constants.swift */,
+				89EEDFF6288EEC460079E7C4 /* Bindable.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -180,12 +185,13 @@
 		89EC43C3288E71A400E4EFFA /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
+				89EEDFF3288EEBE40079E7C4 /* ViewModel */,
+				89EEDFF2288EEBB70079E7C4 /* View */,
 				894AE775288ECF7D00C19150 /* Model */,
 				894AE770288EC50F00C19150 /* Utility */,
 				894AE75A288EC2C800C19150 /* Networking */,
 				89EC43C4288E71A400E4EFFA /* AppDelegate.swift */,
 				89EC43C6288E71A400E4EFFA /* SceneDelegate.swift */,
-				89EC43C8288E71A400E4EFFA /* ViewController.swift */,
 				89EC43CA288E71A400E4EFFA /* Main.storyboard */,
 				89EC43CD288E71A500E4EFFA /* Assets.xcassets */,
 				89EC43CF288E71A500E4EFFA /* LaunchScreen.storyboard */,
@@ -209,6 +215,22 @@
 				89EC43E7288E71A500E4EFFA /* Movie_ListUITestsLaunchTests.swift */,
 			);
 			path = "Movie ListUITests";
+			sourceTree = "<group>";
+		};
+		89EEDFF2288EEBB70079E7C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89EC43C8288E71A400E4EFFA /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89EEDFF3288EEBE40079E7C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89EEDFF4288EEC110079E7C4 /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,11 +370,13 @@
 				894AE772288EC51D00C19150 /* Log.swift in Sources */,
 				894AE763288EC36500C19150 /* HTTPNetworkError.swift in Sources */,
 				894AE769288EC3DC00C19150 /* URLEncoder.swift in Sources */,
+				89EEDFF7288EEC460079E7C4 /* Bindable.swift in Sources */,
 				89EC43C5288E71A400E4EFFA /* AppDelegate.swift in Sources */,
 				894AE75F288EC31600C19150 /* HTTPNetworkRoute.swift in Sources */,
 				894AE76B288EC40200C19150 /* Result.swift in Sources */,
 				894AE767288EC3B200C19150 /* HTTPNetworkResponse.swift in Sources */,
 				894AE76F288EC44D00C19150 /* ClientServiceHelper.swift in Sources */,
+				89EEDFF5288EEC110079E7C4 /* MovieViewModel.swift in Sources */,
 				894AE761288EC34000C19150 /* HTTPMethod.swift in Sources */,
 				894AE774288EC57900C19150 /* Constants.swift in Sources */,
 				894AE76D288EC42700C19150 /* ClientService.swift in Sources */,
