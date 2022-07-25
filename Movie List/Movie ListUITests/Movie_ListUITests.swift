@@ -2,8 +2,6 @@
 //  Movie_ListUITests.swift
 //  Movie ListUITests
 //
-//  Created by Abdullah Al Hadi on 25/7/22.
-//
 
 import XCTest
 
