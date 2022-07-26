@@ -32,7 +32,7 @@
 		89EEDFF7288EEC460079E7C4 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFF6288EEC460079E7C4 /* Bindable.swift */; };
 		89EEDFFA288EF93B0079E7C4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFF8288EF93B0079E7C4 /* MovieTableViewCell.swift */; };
 		89EEDFFB288EF93B0079E7C4 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89EEDFF9288EF93B0079E7C4 /* MovieTableViewCell.xib */; };
-		89EEDFFD288EFFB90079E7C4 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFFC288EFFB90079E7C4 /* UIImageView+Extension.swift */; };
+		89EEDFFD288EFFB90079E7C4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEDFFC288EFFB90079E7C4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,7 @@
 		89EEDFF6288EEC460079E7C4 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		89EEDFF8288EF93B0079E7C4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		89EEDFF9288EF93B0079E7C4 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
-		89EEDFFC288EFFB90079E7C4 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		89EEDFFC288EFFB90079E7C4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				894AE771288EC51D00C19150 /* Log.swift */,
 				894AE773288EC57900C19150 /* Constants.swift */,
 				89EEDFF6288EEC460079E7C4 /* Bindable.swift */,
-				89EEDFFC288EFFB90079E7C4 /* UIImageView+Extension.swift */,
+				89EEDFFC288EFFB90079E7C4 /* Extensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				89EEDFF5288EEC110079E7C4 /* MovieViewModel.swift in Sources */,
 				894AE761288EC34000C19150 /* HTTPMethod.swift in Sources */,
 				894AE774288EC57900C19150 /* Constants.swift in Sources */,
-				89EEDFFD288EFFB90079E7C4 /* UIImageView+Extension.swift in Sources */,
+				89EEDFFD288EFFB90079E7C4 /* Extensions.swift in Sources */,
 				894AE76D288EC42700C19150 /* ClientService.swift in Sources */,
 				89EC43C7288E71A400E4EFFA /* SceneDelegate.swift in Sources */,
 			);
