@@ -17,6 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-Ky-tuC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No item to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDy-Kh-aOZ">
+                                        <rect key="frame" x="10" y="375" width="394" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QDy-Kh-aOZ" firstAttribute="centerY" secondItem="uaa-Ky-tuC" secondAttribute="centerY" id="02K-rm-P9c"/>
+                                    <constraint firstAttribute="trailing" secondItem="QDy-Kh-aOZ" secondAttribute="trailing" constant="10" id="0Lt-FY-hH9"/>
+                                    <constraint firstItem="QDy-Kh-aOZ" firstAttribute="leading" secondItem="uaa-Ky-tuC" secondAttribute="leading" constant="10" id="do6-mE-g9s"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P4m-8d-K2P">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -26,7 +43,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="P4m-8d-K2P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3a2-IY-2E0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uaa-Ky-tuC" secondAttribute="bottom" id="DOd-TR-NB0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P4m-8d-K2P" secondAttribute="bottom" id="U9f-wo-E0t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uaa-Ky-tuC" secondAttribute="trailing" id="ZWN-OS-mcs"/>
+                            <constraint firstItem="uaa-Ky-tuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fap-OW-tA7"/>
+                            <constraint firstItem="uaa-Ky-tuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ow7-ja-W0h"/>
                             <constraint firstItem="P4m-8d-K2P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qeD-eq-s9z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P4m-8d-K2P" secondAttribute="trailing" id="zFc-dB-PoE"/>
                         </constraints>
@@ -34,6 +55,7 @@
                     <navigationItem key="navigationItem" id="ymk-8L-ZGo"/>
                     <connections>
                         <outlet property="movieTableView" destination="P4m-8d-K2P" id="hfx-zG-vYZ"/>
+                        <outlet property="noItemView" destination="uaa-Ky-tuC" id="vRA-ZU-EdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
