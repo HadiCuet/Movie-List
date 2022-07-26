@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct MovieInfo: Decodable {
     let results: [MovieResult]
@@ -19,4 +20,5 @@ struct MovieResult: Decodable {
     }
     let title: String
     let overview: String
+    var cellHeight: CGFloat? = defaultCellHeight
 }

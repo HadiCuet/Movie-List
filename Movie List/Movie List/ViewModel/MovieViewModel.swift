@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieViewModelProtocol {
     var movieList: Bindable<[MovieResult]> { get }
@@ -27,10 +28,25 @@ class MovieViewModel: NSObject, MovieViewModelProtocol {
             }
             switch movieList {
             case .success(let list):
-                self.movieList.value = list.results
+                self.movieList.value = list.results.map({ (movie) -> MovieResult in
+                    var returnMovie = movie
+                    returnMovie.cellHeight = self.calculateCellHeight(forItem: movie)
+                    return returnMovie
+                })
+
             case .failure(let error):
                 Log.info(error.localizedDescription)
             }
         }
+    }
+
+    private func calculateCellHeight(forItem item: MovieResult) -> CGFloat {
+        let labelWidth = UIScreen.main.bounds.width - posterImageWidth - 68     //68 = 3*16 (item gap) + 20 (safe area)
+        let overViewLabelFont = UIFont.systemFont(ofSize: labelFontSize)
+        let titleLabelFont = UIFont.boldSystemFont(ofSize: labelFontSize)
+        let overViewLabeHeight = item.overview.height(withConstrainedWidth: labelWidth, font: overViewLabelFont)
+        let titleLabelHeigt = item.title.height(withConstrainedWidth: labelWidth, font: titleLabelFont)
+        let totalHeight = titleLabelHeigt + overViewLabeHeight + 40     //40 = 3*10 (item gap) + 10 padding
+        return totalHeight > defaultCellHeight ? totalHeight : defaultCellHeight
     }
 }

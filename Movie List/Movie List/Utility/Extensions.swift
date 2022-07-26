@@ -1,11 +1,12 @@
 //
-//  UIImageView+Extension.swift
+//  Extensions.swift
 //  Movie List
 //
 
 import Foundation
 import UIKit
 
+//MARK: ImageView extensions
 extension UIImageView {
     func loadImage(fromUrl url: URL) {
         if let cachedImage = imageCache.object(forKey: url as AnyObject) {
@@ -20,5 +21,14 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+//MARK: String extensions
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font : font], context: nil)
+        return ceil(boundingBox.height)
     }
 }
