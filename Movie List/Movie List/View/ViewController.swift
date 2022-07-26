@@ -8,7 +8,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
-
+    @IBOutlet weak var noItemView: UIView!
+    
     private var searchController = UISearchController()
     private var spinner = UIActivityIndicatorView()
     private var viewModel = MovieViewModel()
@@ -45,13 +46,22 @@ class ViewController: UIViewController {
     private func bindViewModelData() {
         viewModel.movieList.bindAndFire { [weak self] list in
             DispatchQueue.main.async {
-                self?.movieList = list
-                self?.movieTableView.reloadData()
-                self?.searchController.searchBar.text = nil
-                self?.searchController.searchBar.showsCancelButton = false
-                self?.spinner.dismissLoader(view: self?.view ?? UIView())
+                guard let `self` = self else {
+                    return
+                }
+                self.movieList = list
+                self.showTableView(flag: self.movieList.count > 0)
+                self.movieTableView.reloadData()
+                self.searchController.searchBar.text = nil
+                self.searchController.searchBar.showsCancelButton = false
+                self.spinner.dismissLoader(view: self.view)
             }
         }
+    }
+
+    private func showTableView(flag: Bool) {
+        self.movieTableView.isHidden = !flag
+        self.noItemView.isHidden = flag
     }
 
     func showLoader(view: UIView) -> UIActivityIndicatorView {
