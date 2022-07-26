@@ -9,6 +9,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
 
+    private var searchController = UISearchController()
     private var viewModel = MovieViewModel()
     private var movieList = [MovieResult]()
 
@@ -16,23 +17,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Log.info("viewDidLoad [+]")
         self.title = viewTitle
+        self.navigationController?.navigationBar.prefersLargeTitles = true
 
-        setUpTableViewUI()
+        self.setUpTableView()
+        self.setUpSearchController()
         self.bindViewModelData()
+        self.viewModel.searchMovie(withQueryString: nil)
     }
 
-    func setUpTableViewUI() {
+    private func setUpTableView() {
         movieTableView.delegate = self
         movieTableView.dataSource = self
         movieTableView.register(UINib(nibName: tableViewCellName, bundle: nil), forCellReuseIdentifier: tableViewCellName)
     }
 
-    func bindViewModelData() {
-        viewModel.searchMovie(withQueryString: nil)
+    private func setUpSearchController() {
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.navigationItem.searchController = self.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        self.searchController.searchBar.delegate = self
+    }
+
+    private func bindViewModelData() {
         viewModel.movieList.bindAndFire { [weak self] list in
             DispatchQueue.main.async {
                 self?.movieList = list
                 self?.movieTableView.reloadData()
+                self?.searchController.searchBar.text = nil
+                self?.searchController.searchBar.showsCancelButton = false
             }
         }
     }
@@ -63,3 +77,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchMovie(withQueryString: searchBar.text)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+}
