@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var movieTableView: UITableView!
 
     private var searchController = UISearchController()
+    private var spinner = UIActivityIndicatorView()
     private var viewModel = MovieViewModel()
     private var movieList = [MovieResult]()
 
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         self.setUpTableView()
         self.setUpSearchController()
         self.bindViewModelData()
+        self.spinner = self.showLoader(view: self.view)
         self.viewModel.searchMovie(withQueryString: nil)
     }
 
@@ -47,8 +49,24 @@ class ViewController: UIViewController {
                 self?.movieTableView.reloadData()
                 self?.searchController.searchBar.text = nil
                 self?.searchController.searchBar.showsCancelButton = false
+                self?.spinner.dismissLoader(view: self?.view ?? UIView())
             }
         }
+    }
+
+    func showLoader(view: UIView) -> UIActivityIndicatorView {
+        let spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        spinner.backgroundColor = .black.withAlphaComponent(0.5)
+        spinner.layer.cornerRadius = 5.0
+        spinner.clipsToBounds = true
+        spinner.hidesWhenStopped = true
+        spinner.style = .large
+        spinner.color = .white
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        view.isUserInteractionEnabled = false
+        return spinner
     }
 }
 
@@ -78,6 +96,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.spinner = self.showLoader(view: self.view)
         viewModel.searchMovie(withQueryString: searchBar.text)
     }
 
