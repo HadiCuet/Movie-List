@@ -32,3 +32,11 @@ extension String {
         return ceil(boundingBox.height)
     }
 }
+
+//MARK: UIActivityIndicatorView extensions
+extension UIActivityIndicatorView {
+    func dismissLoader(view: UIView) {
+        self.stopAnimating()
+        view.isUserInteractionEnabled = true
+    }
+}
