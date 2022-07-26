@@ -27,7 +27,7 @@ class MovieViewModel: NSObject, MovieViewModelProtocol {
             }
             switch movieList {
             case .success(let list):
-                self.movieList.value.append(contentsOf: list.results)
+                self.movieList.value = list.results
             case .failure(let error):
                 Log.info(error.localizedDescription)
             }
