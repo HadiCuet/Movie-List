@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private var spinner = UIActivityIndicatorView()
     private var viewModel = MovieViewModel()
     private var movieList = [MovieResult]()
+    private var searchText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
                 self.movieList = list
                 self.showTableView(flag: self.movieList.count > 0)
                 self.movieTableView.reloadData()
-                self.searchController.searchBar.text = nil
+                self.searchController.searchBar.text = self.searchText
                 self.searchController.searchBar.showsCancelButton = false
                 self.spinner.dismissLoader(view: self.view)
             }
@@ -100,6 +101,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let imageUrl = self.movieList[indexPath.row].posterUrl {
             cell.posterImageView.loadImage(fromUrl: imageUrl)
         }
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -114,7 +116,14 @@ extension ViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText = searchText
+    }
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if self.searchText.isEmpty {
+            viewModel.searchMovie(withQueryString: nil)
+        }
         searchBar.showsCancelButton = false
     }
 }
